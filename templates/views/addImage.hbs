@@ -1,0 +1,79 @@
+{{>dashboardNavbar}}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800"> Gallery Image</h1>
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Gallery Image</h6>
+                    {{#if warning}}
+                    <p class="mb-4">if you want to update image name and details,you should have to upload image also
+                        otherwise it will through you an error </p>
+                    {{/if}}
+                    {{#if err }}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong> Error </strong>
+                        {{err}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {{/if}}
+                    {{#if msg }}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong> success </strong>
+                        {{msg}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {{/if}}
+                </div>
+                <div class="card-body">
+                    <form action="/{{op}}?_csrf={{csrfToken}}" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                        <input type="hidden" name="id" value="{{Image._id}}">
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-9 control-label" for="textinput">Event Name</label>
+                            <div class="col-md-12">
+                                <input id="textinput" name="name" type="text" placeholder="Enter Name"
+                                    class="form-control input-md" value="{{Image.name}}">
+                            </div>
+                        </div>
+                        <!-- Search input-->
+                        <div class="form-group">
+                            <label class="col-md-9 control-label">Event Details</label>
+                            <div class="col-md-12">
+                                <input id="textinput" name="details" type="text" placeholder="Enter Details"
+                                    class="form-control input-md" value="{{Image.details}}">
+                            </div>
+                        </div>
+                        <!-- File Button -->
+                        <div class="form-group">
+                            <label class="col-md-12 control-label">Upload image</label>
+                            <div class="col-md-12">
+                                <input id="filebutton" name="file" class="input-file" type="file"
+                                    value="{{Image.image}}" accept="image/*">
+                        {{#if Image.image}}
+                                <img src="/uploads/{{Image.image}}" alt="image" width="80">
+                        {{else}}
+                        {{/if}}
+                            </div>
+                        </div>
+
+
+                        <!-- Button -->
+                        <div class="form-group">
+                            <div class="col-md-9">
+                                <button id="singlebutton" type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+
+{{>dashboardFooter}}

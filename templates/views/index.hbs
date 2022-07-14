@@ -1,0 +1,452 @@
+{{>navbar}}
+
+<section class="section section-main">
+    <div class="jumbotron-1-aside">
+        <div class="jumbotron-1-group">
+            <div class="jumbotron-1-group-item focus-toggle-parent wow fadeIn"><a class="jumbotron-1-group-item-toggle"
+                    href="https://www.instagram.com/boostevent.in/" target="_blank"><span
+                        class="icon mdi mdi-instagram"></span></a>
+                <div class="jumbotron-1-group-item-content focus-toggle"><a
+                        href="https://www.instagram.com/boostevent.in/">Instagram</a></div>
+            </div>
+            <div class="jumbotron-1-group-item focus-toggle-parent"><a class="jumbotron-1-group-item-toggle"
+                    href="https://www.facebook.com/boostevent.in/" target="_blank"><span
+                        class="icon mdi mdi-facebook"></span></a>
+                <div class="jumbotron-1-group-item-content focus-toggle"><a
+                        href="https://www.facebook.com/boostevent.in/">Facebook</a></div>
+            </div>
+            {{!-- <div class="jumbotron-1-group-item focus-toggle-parent"><a class="jumbotron-1-group-item-toggle"
+                    href="#"><span class="icon mdi mdi-youtube-play"></span></a>
+                <div class="jumbotron-1-group-item-content focus-toggle"><a href="#">YouTube</a></div>
+            </div> --}}
+        </div>
+    </div>
+    <div class="swiper-container swiper-slider swiper-slider-1" data-loop="true" data-slide-effect="fade"
+        data-autoplay="4000" data-simulate-touch="false">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" data-slide-bg="boostPhoto/slider1.jpg" data-pagination-text="01">
+            </div>
+            <div class="swiper-slide" data-slide-bg="boostPhoto/slider2.jpg" data-pagination-text="02">
+            </div>
+            <div class="swiper-slide" data-slide-bg="boostPhoto/slider3.jpg" data-pagination-text="03">
+            </div>
+        </div>
+        <!--Swiper Pagination-->
+        <div class="swiper-pagination" data-bullet-text="true"></div>
+    </div>
+</section>
+<!-- Form-->
+<section class="section bg-gray-100" id="section-1">
+    <div class="container container-wide">
+        <!-- RD Mailform-->
+        <form class="rd-form rd-mailform form-lg form-1" method="post" action="/eventContact">
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <div class="form-wrap-outer wow fadeIn">
+                <div class="form-wrap form-wrap-icon">
+                    <label class="form-label form-label-outside" for="form-1-destination">Your Name</label>
+                    <input class="form-input" name="name" id="form-1-destination" type="text"
+                        data-constraints="@Required">
+                    <div class="icon form-icon mdi mdi-account"></div>
+                </div>
+            </div>
+            <div class="form-wrap-outer wow fadeIn" data-wow-delay=".025s">
+                <div class="form-wrap form-wrap-icon">
+                    <select class="form-input select" name="event">
+                        <option value="Corporate Event">Select your event</option>
+                        <option value="Corporate Event">Corporate Event</option>
+                        <option value="Birthday Party">Birthday Party</option>
+                        <option value="Wedding Party">Wedding Party</option>
+                        <option value="Brand Promotion Event">Brand Promotion Event</option>
+                        <option value="Conferences">Conferences</option>
+                        <option value="Anniversary">Anniversary</option>
+			<option value="Other">Other</option>
+                    </select>
+                    <div class="icon form-icon mdi mdi-star"></div>
+                </div>
+            </div>
+            <div class="form-wrap-outer wow fadeIn" data-wow-delay=".05s">
+                <div class="form-wrap form-wrap-icon">
+                    <label class="form-label" for="contact-2-phone">Phone</label>
+                    <input class="form-input" name="phone" id="contact-2-phone" type="text" name="phone"
+                        data-constraints="@PhoneNumber">
+                    <div class="icon form-icon mdi mdi-phone icon-lg"></div>
+                </div>
+            </div>
+            <div class="form-button wow fadeIn" data-wow-delay=".075s">
+                {{#if success}}
+                <button class="button button-lg button-icon button-icon-left button-primary" type="submit"><span
+                        class="icon mdi mdi-pencil"></span>Sent !</button>
+                {{else}}
+                <button class="button button-lg button-icon button-icon-left button-primary" type="submit"><span
+                        class="icon mdi mdi-pencil"></span>Send Request</button>
+                {{/if}}
+            </div>
+        </form>
+    </div>
+</section>
+<!-- What We Offer-->
+<section class="section section-1 bg-color-gray-100">
+    <div class="container container-wide">
+        <div class="layout-2">
+            <h3 class="font-weight-bold text-primary wow fadeIn offset-top-40-xxl">Our Events</h3>
+            <div class="layout-2-item wow fadeIn" data-wow-delay=".1s">
+                <div class="group group-2 group-middle">
+                    <div class="owl-nav-1" id="owl-nav-1">
+                        <button class="owl-arrow owl-arrow-prev" aria-label="Prev">
+                            <svg width="20" height="16" viewBox="0 0 20 16" xmlns="https://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.7,15.1c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4L2.4,8l5.7-5.7c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L0.3,7.3										c-0.4,0.4-0.4,1,0,1.4L6.7,15.1z M20,7H1v2h19V7z">
+                                </path>
+                            </svg>
+                        </button>
+                        <button class="owl-arrow owl-arrow-next" aria-label="Next">
+                            <svg width="20" height="16" viewBox="0 0 20 16" xmlns="https://www.w3.org/2000/svg">
+                                <path
+                                    d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928932C12.9526 0.538408 12.3195 0.538408 11.9289 0.928932C11.5384 1.31946 11.5384 1.95262 11.9289 2.34315L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM0 9H19V7L0 7L0 9Z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div><a class="button button-sm button-light font-weight-sbold" href="events.html">See
+                        All</a>
+                </div>
+            </div>
+        </div>
+        <!-- Owl Carousel-->
+        <div class="owl-carousel owl-3 grid-wing-right wow fadeIn" data-wow-delay=".1s" data-items="1" data-sm-items="2"
+            data-lg-items="3" data-xl-items="4" data-xxl-items="5" data-dots="false" data-nav="false"
+            data-nav-custom="#owl-nav-1" data-stage-padding="0" data-loop="true" data-margin="30"
+            data-mouse-drag="false" data-autoplay="true" data-autoplay-speed="4000">
+            <div class="owl-item-inner"><a class="destination-1 context-dark" href="/event">
+                    <figure class="destination-1-figure">
+                        <div class="destination-1-image bg-image" style="background-image: url(boostPhoto/event1.jpg);">
+                        </div>
+                    </figure>
+                    <div class="destination-1-caption">
+                        <p class="heading-3 destination-1-title">Dealers Meet</p>
+                        {{!-- <div class="destination-1-comment"><span>send request</span></div> --}}
+                    </div>
+                </a>
+            </div>
+            <div class="owl-item-inner"><a class="destination-1 context-dark" href="/event">
+                    <figure class="destination-1-figure">
+                        <div class="destination-1-image bg-image" style="background-image: url(boostPhoto/event2.jpg);">
+                        </div>
+                    </figure>
+                    <div class="destination-1-caption">
+                        <p class="heading-3 destination-1-title">Product Launch</p>
+                        {{!-- <div class="destination-1-comment"><span>send request</span></div> --}}
+                    </div>
+                </a>
+            </div>
+            <div class="owl-item-inner"><a class="destination-1 context-dark" href="/event">
+                    <figure class="destination-1-figure">
+                        <div class="destination-1-image bg-image" style="background-image: url(boostPhoto/event3.jpg);">
+                        </div>
+                    </figure>
+                    <div class="destination-1-caption">
+                        <p class="heading-3 destination-1-title">Conference</p>
+                        {{!-- <div class="destination-1-comment"><span>send request</span></div> --}}
+                    </div>
+                </a>
+            </div>
+            <div class="owl-item-inner"><a class="destination-1 context-dark" href="/event">
+                    <figure class="destination-1-figure">
+                        <div class="destination-1-image bg-image" style="background-image: url(boostPhoto/event4.jpg);">
+                        </div>
+                    </figure>
+                    <div class="destination-1-caption">
+                        <p class="heading-3 destination-1-title">Seminar</p>
+                        {{!-- <div class="destination-1-comment"><span>send request</span></div> --}}
+                    </div>
+                </a>
+            </div>
+            {{!-- <div class="owl-item-inner"><a class="destination-1 context-dark" href="/event">
+                    <figure class="destination-1-figure">
+                        <div class="destination-1-image bg-image" style="background-image: url(boostPhoto/event5.jpg);">
+                        </div>
+                    </figure>
+                    <div class="destination-1-caption">
+                        <p class="heading-3 destination-1-title">Theme Party</p>
+                        {{!-- <div class="destination-1-comment"><span>send request</span></div> --}}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- What We Offer-->
+<section class="section section-lg bg-default bg-image" style="background-image: url(images/index-bg-1-1920x646.jpg);">
+    <div class="container">
+        <h2 class="font-weight-bold text-primary text-center wow fadeIn" style="color: #fc6767 !important;">What We Offer</h2>
+        <ul class="list-group-2 row row-30 row-lg-50 offset-top-0">
+            <li class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay=".1s">
+                <article class="lg-2-item">
+                    <div class="lg-2-item-aside">
+                        <div class="icon lg-2-item-icon linearicons-leaf"></div>
+                    </div>
+                    <div class="lg-2-item-main">
+                        <h4 class="lg-2-item-title">Celebrity Management</h4>
+                        <p>Boost Event offers a multitude of services in the artist management space.</p>
+                    </div>
+                </article>
+            </li>
+            <li class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay=".2s">
+                <article class="lg-2-item">
+                    <div class="lg-2-item-aside">
+                        <div class="icon lg-2-item-icon linearicons-diamond2"></div>
+                    </div>
+                    <div class="lg-2-item-main">
+                        <h4 class="lg-2-item-title">Stall Fabrication</h4>
+                        <p>We have been there and done it quite a lot of times for our clients who seek perfection and don't want to compromise on thier stall design.</p>
+                    </div>
+                </article>
+            </li>
+            <li class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay=".3s">
+                <article class="lg-2-item">
+                    <div class="lg-2-item-aside">
+                        <div class="icon lg-2-item-icon linearicons-camera2"></div>
+                    </div>
+                    <div class="lg-2-item-main">
+                        <h4 class="lg-2-item-title">Exhibition</h4>
+                        <p>Exhibitions are major events for any company & we fully understand the need for a return on investment.</p>
+                    </div>
+                </article>
+            </li>
+            <li class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay=".1s">
+                <article class="lg-2-item">
+                    <div class="lg-2-item-aside">
+                        <div class="icon lg-2-item-icon linearicons-gift"></div>
+                    </div>
+                    <div class="lg-2-item-main">
+                        <h4 class="lg-2-item-title">TV Serial Promotion</h4>
+                        <p>Over the years we have helped several companies to become the leaders in thier niche.</p>
+                    </div>
+                </article>
+            </li>
+            <li class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay=".2s">
+                <article class="lg-2-item">
+                    <div class="lg-2-item-aside">
+                        <div class="icon lg-2-item-icon linearicons-mic2"></div>
+                    </div>
+                    <div class="lg-2-item-main">
+                        <h4 class="lg-2-item-title">Product Launch</h4>
+                        <p>A product launch is a planned effort to bring a new product to market.</p>
+                    </div>
+                </article>
+            </li>
+            <li class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay=".3s">
+                <article class="lg-2-item">
+                    <div class="lg-2-item-aside">
+                        <div class="icon lg-2-item-icon linearicons-glass"></div>
+                    </div>
+                    <div class="lg-2-item-main">
+                        <h4 class="lg-2-item-title">Theme Parties</h4>
+                        <p>We offer a one-stop Solution for event production from design and installation to visuals, sound and branding.</p>
+                    </div>
+                </article>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- Planning and Organizing-->
+<section class="section section-lg bg-default">
+    <div class="container">
+        <h2 class="font-weight-bold text-primary block-4 wow fadeIn" style="color: #fc6767 !important;">Planning and Organizing Unforgettable
+            Events Since 2014</h2>
+        <div class="row row-30 justify-content-lg-between mt-15 mt-md-30">
+            <div class="col-md-8 col-xl-7 text-gray-800">
+                <p class="wow fadeIn" data-wow-delay=".025s">Since our establishment in 2014, Smile has been
+                    providing quality event planning services and solutions to corporate and individual clients.
+                </p>
+                <p class="wow fadeIn" data-wow-delay=".05s">We rely on a consultative approach to turn your
+                    dreams into an unforgettable experience. Using our strengths in event management, design,
+                    and styling, our team takes your vision and turns it into a well executed and custom-made
+                    event.</p>
+            </div>
+            <div class="col-md-4 col-xl-3 text-md-center"><a
+                    class="button button-lg button-icon button-icon-left button-primary" href="#"><span
+                        class="icon mdi mdi-pencil"></span>Send Request</a></div>
+        </div>
+    </div>
+    <div class="container section-decoration-1-figure mt-50">
+        <div class="row row-30">
+            <div class="col-6 col-sm-3 wow fadeIn">
+                <!-- Counter Classic-->
+                <article class="counter-classic">
+                    <div class="counter-classic-main">
+                        <h3 class="font-weight-bold text-tertiary" style="color: #C25FFF;">Step 1</h3>
+                    </div>
+                    <h5 class="counter-classic-title">We Understand Your Requirements</h5>
+                </article>
+            </div>
+            <div class="col-6 col-sm-3 wow fadeIn" data-wow-delay=".025s">
+                <!-- Counter Classic-->
+                <article class="counter-classic">
+                    <div class="counter-classic-main">
+                        <h3 class="font-weight-bold text-tertiary" style="color: #C25FFF;">Step 2</h3>
+                    </div>
+                    <h5 class="counter-classic-title">We Plan</h5>
+                </article>
+            </div>
+            <div class="col-6 col-sm-3 wow fadeIn" data-wow-delay=".05s">
+                <!-- Counter Classic-->
+                <article class="counter-classic">
+                    <div class="counter-classic-main">
+                        <h3 class="font-weight-bold text-tertiary" style="color: #C25FFF;">Step 3</h3>
+                    </div>
+                    <h5 class="counter-classic-title">We Execute Our Plan In the Best way Possible</h5>
+                </article>
+            </div>
+            <div class="col-6 col-sm-3 wow fadeIn" data-wow-delay=".075s">
+                <!-- Counter Classic-->
+                <article class="counter-classic">
+                    <div class="counter-classic-main">
+                        <h3 class="font-weight-bold text-tertiary" style="color: #C25FFF;">Step 4</h3>
+                    </div>
+                    <h5 class="counter-classic-title">Now! Lets Enjoy your perfect event</h5>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Our Projects-->
+<div class="section section-sm section-single-2">
+    <div class="container-fluid isotope-wrap">
+        <h2 class="font-weight-bold text-primary text-center" style="color: #fc6767 !important;">Our Projects</h2>
+        <div class="row row-30 custom-padding isotope wow fadeIn" data-lightgallery="group">
+            <div class="col-sm-6 col-lg-4 col-xl-3 isotope-item">
+                <!-- Thumbnail Classic-->
+                <article class="thumbnail-classic">
+                    <div class="thumbnail-classic-figure"><img src="images/Product.jpg" alt="" width="473"
+                            height="466" />
+                    </div>
+                    <div class="thumbnail-classic-caption">
+                        <div>
+                            <h3 class="thumbnail-classic-title"><a href="#">Product Launch</a></h3>
+                            {{!-- <h6 class="thumbnail-classic-subtitle ls-0">We offer quality event organization and
+                                management services.</h6> --}}
+                            <div class="thumbnail-classic-button-wrap">
+                                <div class="thumbnail-classic-button"><a class="button"
+                                        href="images/Product.jpg" data-lightgallery="item"><img
+                                            src="images/Product.jpg" alt="" width="473" height="466" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3 isotope-item">
+                <!-- Thumbnail Classic-->
+                <article class="thumbnail-classic">
+                    <div class="thumbnail-classic-figure"><img src="images/Seminar.jpg" alt="" width="473"
+                            height="466" />
+                    </div>
+                    <div class="thumbnail-classic-caption">
+                        <div>
+                            <h3 class="thumbnail-classic-title"><a href="#">Seminar</a></h3>
+                            {{!-- <h6 class="thumbnail-classic-subtitle ls-0">We offer quality event organization and
+                                management services.</h6> --}}
+                            <div class="thumbnail-classic-button-wrap">
+                                <div class="thumbnail-classic-button"><a class="button"
+                                        href="images/Seminar.jpg" data-lightgallery="item"><img
+                                            src="images/Seminar.jpg" alt="" width="473" height="466" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3 isotope-item">
+                <!-- Thumbnail Classic-->
+                <article class="thumbnail-classic">
+                    <div class="thumbnail-classic-figure"><img src="images/conference.jpg" alt="" width="473"
+                            height="466" />
+                    </div>
+                    <div class="thumbnail-classic-caption">
+                        <div>
+                            <h3 class="thumbnail-classic-title"><a href="#">Conference</a></h3>
+                            {{!-- <h6 class="thumbnail-classic-subtitle ls-0">We offer quality event organization and
+                                management services.</h6> --}}
+                            <div class="thumbnail-classic-button-wrap">
+                                <div class="thumbnail-classic-button"><a class="button"
+                                        href="images/conference.jpg" data-lightgallery="item"><img
+                                            src="images/conference.jpg" alt="" width="473" height="466" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3 isotope-item">
+                <!-- Thumbnail Classic-->
+                <article class="thumbnail-classic">
+                    <div class="thumbnail-classic-figure"><img src="images/stall.jpg" alt="" width="473"
+                            height="466" style="height: 33.5vh;"/>
+                    </div>
+                    <div class="thumbnail-classic-caption">
+                        <div>
+                            <h3 class="thumbnail-classic-title"><a href="#">Stall Fabrication</a></h3>
+                            {{!-- <h6 class="thumbnail-classic-subtitle ls-0">We offer quality event organization and
+                                management services.</h6> --}}
+                            <div class="thumbnail-classic-button-wrap">
+                                <div class="thumbnail-classic-button"><a class="button"
+                                        href="images/stall.jpg" data-lightgallery="item"><img
+                                            src="images/stall.jpg" alt="" width="473" height="466" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Get in Touch-->
+<section class="section section-lg bg-gray-100">
+    <div class="container">
+        <h2 class="font-weight-bold text-primary" style="color: #fc6767 !important;">Get in Touch</h2>
+        <!-- RD Mail form-->
+        <form class="rd-form rd-mailform form-lg" method="post" action="/contactUser">
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <div class="row row-30">
+                <div class="col-lg-4">
+                    <div class="form-wrap form-wrap-icon">
+                        <input class="form-input" id="contact-name" type="text" name="name"
+                            data-constraints="@Required">
+                        <label class="form-label" for="contact-name">Name</label>
+                        <div class="icon form-icon mdi mdi-account-outline text-primary"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-wrap form-wrap-icon">
+                        <input class="form-input" id="contact-phone" type="text" name="phone"
+                            data-constraints="@PhoneNumber">
+                        <label class="form-label" for="contact-phone">Phone</label>
+                        <div class="icon form-icon mdi mdi-phone text-primary"></div>
+                    </div>`
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-wrap form-wrap-icon">
+                        <input class="form-input" id="email" type="text" name="email" data-constraints="@Email">
+                        <label class="form-label" for="email">Email</label>
+                        <div class="icon form-icon mdi mdi-email-outline text-primary"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-wrap form-wrap-icon">
+                        <label class="form-label" for="contact-message">Message</label>
+                        <textarea class="form-input" id="contact-message" name="message"
+                            data-constraints="@Required"></textarea>
+                        <div class="icon form-icon mdi mdi-message-outline text-primary"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-wrap form-wrap-button">
+                <button class="button button-lg button-icon button-icon-left button-primary" type="submit"><span
+                        class="icon mdi mdi-pencil"></span>Send Message</button>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- Page Footer-->
+{{>footer}}

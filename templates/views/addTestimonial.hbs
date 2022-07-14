@@ -1,0 +1,72 @@
+{{>dashboardNavbar}}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800"> Testimonial </h1>
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary"> Testimonial</h6>
+                    {{#if err }}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong> Error </strong>
+                        {{err}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {{/if}}
+                    {{#if msg }}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong> success </strong>
+                        {{msg}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {{/if}}
+                </div>
+                <div class="card-body">
+                    <form action="/{{op}}" method="POST">
+                        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                        <input type="hidden" name="id" value="{{testimonial._id}}">
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-9 control-label" for="textinput">Event Name</label>
+                            <div class="col-md-12">
+                                <input id="textinput" name="name" type="text" placeholder="Enter Client Name"
+                                    class="form-control input-md" value="{{testimonial.name}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-9 control-label">Event Details</label>
+                            <div class="col-md-12">
+                                <input id="textinput" name="message" type="text" placeholder="Enter Client Message"
+                                    class="form-control input-md" value="{{testimonial.message}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-9 control-label">Date</label>
+                            <div class="col-md-12">
+                                <input id="textinput" name="date" type="Date" placeholder="Enter Date"
+                                    class="form-control input-md" value="{{testimonial.date}}">
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <div class="form-group">
+                            <div class="col-md-9">
+                                <button id="singlebutton" type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+
+{{>dashboardFooter}}
